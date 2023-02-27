@@ -18,6 +18,21 @@ Article.find({ '_id': '63fbd73ae547b506644b365b', 'body': 'Testando o corpo do a
     console.log(err);
 });
 
+Article.findByIdAndDelete('63fbd8699fb5c2ec229f76ae').then(() => {
+    console.log('Dado deletado!');
+}).catch((err) => {
+    console.log(err);
+});
+
+Article.findByIdAndUpdate('63fbd8af88b64e20c1c23d76', {
+    title: 'Teste update',
+    author: 'Update do autor'
+}).then(() => {
+    console.log('Atualizado com sucesso!')
+}).catch(err => {
+    console.log(err);
+});
+
 //cadastro de artigos
 const article = new Article({
     title: 'Teste título 2',
